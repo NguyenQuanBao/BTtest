@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class City {
@@ -12,9 +14,15 @@ public class City {
     private Long id;
     private String nameCity;
     private String nameCountry;
+    @Min(value =1 , message = "Diện tích cần nhập vào số dương")
     private Long square;
+
+    @Min(value =1 , message = "Dân số cần nhập vào số dương")
     private int population;
+
+    @Min(value =1 , message = "GDP cần nhập vào số dương")
     private Long GDP;
+
     private String description;
 
 
